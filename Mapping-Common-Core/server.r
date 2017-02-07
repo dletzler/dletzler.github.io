@@ -50,7 +50,7 @@ shinyServer(function(input,output){
    
     proxy=leafletProxy("map", data=school.sub())
     proxy %>% clearMarkers() %>% addCircleMarkers(lng=~long, lat=~lat, opacity=1, color = ~Color, group="Markers", radius= 3, popup= ~paste(sep="<br/>", School.Name, paste(Proficient, "% Proficient"))) %>%
-    clearControls %>% addLegend("topleft", pal = pal, values = address.test$Proficient.ELA, na.label= 'Not Reported', title = paste0("Percent Proficient in ", input$test, ", ", input$year)) %>%
+    clearControls %>% addLegend("bottomright", pal = pal, values = address.test$Proficient.ELA, na.label= 'Not Reported', title = paste0("Percent Proficient in ", input$test, ", ", input$year)) %>%
       addLegend("topright", pal = pal2, values = census.vital$Median.Household.Income, na.label= 'Not Reported', title = "Median Household Income")
       
       

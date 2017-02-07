@@ -4,7 +4,7 @@ library(leaflet)
 
 #Make available census tract shapes, school test data, and income data for census.
 
-tract.longlat <- spTransform(readOGR(".", "nyct2010"), CRS("+proj=longlat +datum=WGS84"))
+tract.longlat <- spTransform(readOGR("./nyct2010_16d", "nyct2010"), CRS("+proj=longlat +datum=WGS84"))
 copy_longlat<-tract.longlat
 
 
