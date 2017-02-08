@@ -28,8 +28,7 @@ shinyServer(function(input,output){
   
   output$map<-renderLeaflet({
    
-    leaflet() %>%  addTiles() %>% setView(lng=-74, lat=40.7, zoom=11) %>%
-      addPolygons(data=tract.longlat, weight=1, group="Tract", layerId=census.vital$X)
+    leaflet() %>%  addTiles() %>% setView(lng=-74, lat=40.7, zoom=11) 
       
   })
   
@@ -43,7 +42,7 @@ shinyServer(function(input,output){
                         "Lowest Quintile"=census.vital[census.vital$Income.Bucket=="Lowest Quintile",],
                         "All"= census.vital)
     proxy=leafletProxy("map", data=copy_longlat)
-    proxy %>% clearShapes() %>% addPolygons(weight=1, group="Tracts", color = "black", fillOpacity= 0.5, fillColor = pal2(census.vital$Median.Household.Income), popup=paste(sep="<br/>", copy_longlat@data$NTAName, paste0("Median AnnualHousehold Income (2010): $",census.data$Median.Household.Income)))
+    proxy %>% clearShapes() %>% addPolygons(weight=1, group="Tracts", color = "black", fillOpacity= 0.5, fillColor = census.data$Color, popup=paste(sep="<br/>", copy_longlat@data$NTAName, paste0("Median AnnualHousehold Income (2010): $",census.data$Median.Household.Income)))
   })
   
   observe({
