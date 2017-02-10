@@ -1,0 +1,54 @@
+
+#3943	Wednesday, October 24, 2001	Michael Arnone	1400	2400	0	No	SPORTS ON TV	The highest-rated sports program in TV history, other than a Super Bowl, took place on Feb. 23, 1994 in this sport	ladies\' figure skating	
+
+#3943	Wednesday, October 24, 2001	Michelle Clum	4100	7800	1599	No	SPORTS ON TV	The highest-rated sports program in TV history, other than a Super Bowl, took place on Feb. 23, 1994 in this sport	ladies\' figure skating	
+
+#3943	Wednesday, October 24, 2001	Ryan Moore	1000	7000	6000	No	SPORTS ON TV	The highest-rated sports program in TV history, other than a Super Bowl, took place on Feb. 23, 1994 in this sport	ladies\' figure skating	
+
+#3942	Tuesday, October 23, 2001	Larry Cloud	1700	7000	2000	No	BUSINESS & INDUSTRY	These 2 companies whose products complement each other are the only 2 that have ever topped the Fortune 500	General Motors & Exxon	
+
+#3942	Tuesday, October 23, 2001	Andrew Garen	5100	4900	900	No	BUSINESS & INDUSTRY	These 2 companies whose products complement each other are the only 2 that have ever topped the Fortune 500	General Motors & Exxon	
+
+#3942	Tuesday, October 23, 2001	Pam Mueller	1300	6700	6399	No	BUSINESS & INDUSTRY	These 2 companies whose products complement each other are the only 2 that have ever topped the Fortune 500	General Motors & Exxon	
+
+#3941	Monday, October 22, 2001	Babu Srinivasan	3000	5800	11500	Yes	INTERNATIONAL COASTLINES	It's the only country bordering the Caspian Sea that was not a member of the Soviet Union	Iran	
+
+#3941	Monday, October 22, 2001	Mark Eckard	3700	11400	12900	Yes	INTERNATIONAL COASTLINES	It's the only country bordering the Caspian Sea that was not a member of the Soviet Union	Iran	
+
+#3941	Monday, October 22, 2001	Rick Knutsen	1400	9600	7599	No	INTERNATIONAL COASTLINES	It's the only country bordering the Caspian Sea that was not a member of the Soviet Union	Iran	
+
+#3668	Wednesday, July 12, 2000	Doug Lach	4700	8500	12000	Yes	WORLD CAPITALS	Founded in 1840, this city is the world's southernmost national capital	Wellington, New Zealand	
+
+#3668	Wednesday, July 12, 2000	Jason Berner	700	4700	0	No	WORLD CAPITALS	Founded in 1840, this city is the world's southernmost national capital	Wellington, New Zealand	
+
+#3668	Wednesday, July 12, 2000	Cheryl Klein	800	1500	0	No	WORLD CAPITALS	Founded in 1840, this city is the world's southernmost national capital	Wellington, New Zealand	
+
+#3940	Friday, October 19, 2001	Ulhas Rajurkar	1300	7500	5000	No	MAJOR LEAGUE BASEBALL TEAM NAMES	This team received its name after an 1890 incident in which it "stole" away an important player from another team	Pittsburgh Pirates	
+
+#3940	Friday, October 19, 2001	Kevin F. Sherry	3600	8100	1100	No	MAJOR LEAGUE BASEBALL TEAM NAMES	This team received its name after an 1890 incident in which it "stole" away an important player from another team	Pittsburgh Pirates	
+
+#3940	Friday, October 19, 2001	Lesley Marshall	0	1600	3200	Yes	MAJOR LEAGUE BASEBALL TEAM NAMES	This team received its name after an 1890 incident in which it "stole" away an important player from another team	Pittsburgh Pirates	
+
+#3939	Thursday, October 18, 2001	Ulhas Rajurkar	4100	9600	19200	Yes	ORGANIZATIONS	This organization is headquartered at 1776 D Street, NW Washington, D.C.	Daughters of the American Revolution	
+
+#3939	Thursday, October 18, 2001	Jeanne Kirk	2000	3800	7600	Yes	ORGANIZATIONS	This organization is headquartered at 1776 D Street, NW Washington, D.C.	Daughters of the American Revolution	
+
+#3939	Thursday, October 18, 2001	Jay Smith	800	8600	16600	Yes	ORGANIZATIONS	This organization is headquartered at 1776 D Street, NW Washington, D.C.	Daughters of the American Revolution	
+
+#3938	Wednesday, October 17, 2001	Sharon Forsher	900	4100	100	No	MUSIC & THE MOVIES	The soundtrack of this 1992 film is the bestselling movie soundtrack of the 1990s	The Bodyguard	
+
+#3938	Wednesday, October 17, 2001	Ulhas Rajurkar	3400	6400	4599	No	MUSIC & THE MOVIES	The soundtrack of this 1992 film is the bestselling movie soundtrack of the 1990s	The Bodyguard	
+
+#3938	Wednesday, October 17, 2001	Pamela Robinson	2700	3500	0	No	MUSIC & THE MOVIES	The soundtrack of this 1992 film is the bestselling movie soundtrack of the 1990s	The Bodyguard	
+
+#3937	Tuesday, October 16, 2001	Ellen Rourke	1000	3600	4200	Yes	USA	Now part of a national recreation area, it was once referred to as "Uncle Sam's Devil's Island"	Alcatraz Island	
+
+#3937	Tuesday, October 16, 2001	Kent Hofmann	4800	7200	6200	No	USA	Now part of a national recreation area, it was once referred to as "Uncle Sam's Devil's Island"	Alcatraz Island	
+
+#3937	Tuesday, October 16, 2001	Sharon Forsher	900	4100	8100	Yes	USA	Now part of a national recreation area, it was once referred to as "Uncle Sam's Devil's Island"	Alcatraz Island	
+
+#3936	Monday, October 15, 2001	Tanya Knight	1000	800	0	No	SCIENCE NEWS	It's the reason that airlines altered many of their transpacific flight plans on March 23, 2001	the Mir space station crashing down to Earth	
+
+#3936	Monday, October 15, 2001	Ellen Rourke	2800	2000	1601	No	SCIENCE NEWS	It's the reason that airlines altered many of their transpacific flight plans on March 23, 2001	the Mir space station crashing down to Earth	
+
+#3936	Monday, October 15, 2001	Ben Martin	1900	-100	-100	No	SCIENCE NEWS	It's the reason that airlines altered many of their transpacific flight plans on March 23, 2001	the Mir space station crashing down to Earth	
