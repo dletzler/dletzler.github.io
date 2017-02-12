@@ -20,7 +20,7 @@ class JeopardySpider(Spider):
     def parse_game(self, response):
         #Step 1--Compile single line of one-off show-level data
         Show = re.split(" - ", response.xpath('//*/h1/text()').extract()[0])
-        Episode = re.split(" ", Show[0])[1]
+        Episode = Show[0]
         Date = Show[1]
         contestants = response.xpath('//*/p[@class="contestants"]/a[1]/text()').extract()
         first_round = response.xpath('//*[@id="jeopardy_round"]').extract()[0]
@@ -35,13 +35,11 @@ class JeopardySpider(Spider):
         BSRounds = [jquestions, dquestions]
 
         for j in range(0, len(Rounds)):
+            BaseValue = int(Selector(text=Rounds[j]).xpath('//*/table[1]//*/table/tr[1]/td/div/table/tr/td[2]/text()').extract()[0].replace('$', "").replace(',',""))
             for i in range(0,30):
                 Round = Selector(text=Rounds[j]).xpath('//*/h2/text()').extract()[0]
-                Category = Selector(text=Rounds[j]).xpath('//*/td[@class="category_name"]/text()').extract()[i%6]
-                try:
-                    Value = BSRounds[j][i].find('td', {'class':'clue_value'}).get_text()
-                except:
-                    Value = str(200 + (i/6)*200)
+                Category = Selector(text=Rounds[j]).xpath('//*/table[1]/tr[1]/*/table/tr[1]//*/text()').extract()[i%6]
+                Value = BaseValue * (1 + i/6)
                 try:
                     Clue = BSRounds[j][i].find('td', {'class': 'clue_text'}).get_text()
                 except:
@@ -97,7 +95,7 @@ class JeopardySpider(Spider):
                 item['Date'] = Date
                 item['Round'] = Round
                 item['Category'] = Category
-                item['Value'] = Value.replace('$','')
+                item['Value'] = Value
                 item['Clue'] = Clue
                 item['Answer'] = Answer
                 item['Order'] = Order

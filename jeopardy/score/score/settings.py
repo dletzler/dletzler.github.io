@@ -14,7 +14,7 @@ BOT_NAME = 'score'
 SPIDER_MODULES = ['score.spiders']
 NEWSPIDER_MODULE = 'score.spiders'
 
-DOWNLOAD_DELAY = 1
+DOWNLOAD_DELAY = 0
 
 ITEM_PIPELINES = {'score.pipelines.WriteItemPipeline': 200,}
 

@@ -17,38 +17,69 @@ class ScoreSpider(Spider):
 
     def parse_game(self, response):
         Show = re.split(" - ", response.xpath('//*/h1/text()').extract()[0])
-        Episode = re.split(" ", Show[0])[1]
-        Date = Show[1]
+        Episode = Show[0]
+        Date = re.split(" ", Show[1])[1] + re.split(" ", Show[1])[2] + re.split(" ", Show[1])[3]
         contestants = response.xpath('//*/p[@class="contestants"]/a[1]/text()').extract()
         scores1 = response.xpath('//*[@id="jeopardy_round"]/table[3]/tr[2]/td').extract()
         scores2 = response.xpath('//*[@id="double_jeopardy_round"]/table[2]/tr[2]/td').extract()
-        scores3 = response.xpath('//*[@id="final_jeopardy_round"]/table[2]/tr[2]/td').extract()
-        final = response.xpath('//*[@id="final_jeopardy_round"]/table[1]').extract()
-        result = BeautifulSoup(final[0]).div.get('onmouseover')
-        right_final = BeautifulSoup(result).find_all('td', {'class': 'right'})
+        try:
+            if "Tiebreaker Round" in response.xpath('//*[@id="final_jeopardy_round"]/h2/text()').extract()[0]:
+                scores3 = response.xpath('//*[@id="final_jeopardy_round"]/table[3]/tr[2]/td').extract()
+            else:
+                scores3 = response.xpath('//*[@id="final_jeopardy_round"]/table[2]/tr[2]/td').extract()
+        except:
+            scores3 = response.xpath('//*[@id="final_jeopardy_round"]/table[2]/tr[2]/td').extract()
+        try:
+            comment = response.xpath('//*/div[@id="game_comments"]/text()').extract()[0]
+        except:
+            comment = "Regular Play"
+        try:
+            final = response.xpath('//*[@id="final_jeopardy_round"]/table[1]').extract()
+            result = BeautifulSoup(final[0]).div.get('onmouseover')
+            right_final = BeautifulSoup(result).find_all('td', {'class': 'right'})
+        except:
+            right_final = []
 
         for j in range(0, len(contestants)):
-            Contestant = contestants[2-j]
-            ScoreFirst = BeautifulSoup(scores1[j]).find('td').get_text()
-            ScoreSecond = BeautifulSoup(scores2[j]).find('td').get_text()
-            Final = BeautifulSoup(scores3[j]).find('td').get_text()
+            Contestant = contestants[len(contestants)-1-j]
             FinalCorrect = "No"
-            for i in range(0, len(right_final)):
-                if right_final[i].get_text() in re.split(" ", contestants[2-j]):
-                    FinalCorrect = "Yes"
-                    break
-
+            try:
+                ScoreFirst = BeautifulSoup(scores1[j]).find('td').get_text()
+            except:
+                ScoreFirst = "Not available"
+            try:
+                ScoreSecond = BeautifulSoup(scores2[j]).find('td').get_text()
+            except:
+                ScoreSecond = "Not available"
+            try:
+                Final = BeautifulSoup(scores3[j]).find('td').get_text()
+                for i in range(0, len(right_final)):
+                    if right_final[i].get_text() in re.split(" ", contestants[len(contestants)- 1 - j]):
+                        FinalCorrect = "Yes"
+                        break
+            except:
+                Final = "Not available"
+                FinalCorrect = "Not available"
+            try:
+                FinalCat = BeautifulSoup(final[0]).find('td', {'class': 'category_name'}).get_text()
+                FinalQ = BeautifulSoup(final[0]).find('td', {'class': 'clue_text'}).get_text()
+                FinalA = BeautifulSoup(result).find('em').get_text()
+            except:
+                FinalCat = "Not available"
+                FinalQ = "Not available"
+                FinalA = "Not available"
             #Assign data to Item
             item = ScoreItem()
             item['Contestant'] = Contestant
             item['Date'] = Date
+            item['Comment'] = comment
             item['Episode'] = Episode
             item['ScoreFirst'] = ScoreFirst.replace('$','').replace(',','')
             item['ScoreSecond'] = ScoreSecond.replace('$','').replace(',','')
             item['Final'] = Final.replace('$','').replace(',','')
             item['FinalCorrect'] = FinalCorrect
-            item['FinalCat'] = BeautifulSoup(final[0]).find('td', {'class': 'category_name'}).get_text()
-            item['FinalQ'] = BeautifulSoup(final[0]).find('td', {'class': 'clue_text'}).get_text()
-            item['FinalA'] = BeautifulSoup(result).find('em').get_text()
+            item['FinalCat'] = FinalCat
+            item['FinalQ'] = FinalQ
+            item['FinalA'] = FinalA
 
             yield item

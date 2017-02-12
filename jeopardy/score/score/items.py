@@ -11,6 +11,7 @@ import scrapy
 class ScoreItem(scrapy.Item):
     Episode = scrapy.Field()
     Date = scrapy.Field()
+    Comment = scrapy.Field()
     Contestant = scrapy.Field()
     ScoreFirst = scrapy.Field()
     ScoreSecond = scrapy.Field()
