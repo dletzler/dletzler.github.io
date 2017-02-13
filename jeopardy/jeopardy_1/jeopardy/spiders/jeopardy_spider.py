@@ -55,7 +55,7 @@ class JeopardySpider(Spider):
                 try:
                     DailyDouble = re.split(" ", BSRounds[j][i].find('td', {'class': 'clue_value_daily_double'}).get_text())[1]
                 except:
-                    DailyDouble = "N/A"
+                    DailyDouble = "NA"
                 try:
                     Right = BeautifulSoup(BSRounds[j][i].div.get('onmouseover')).find('td', {'class':'right'}).get_text()
                     for k in range(0, len(contestants)):
@@ -69,25 +69,25 @@ class JeopardySpider(Spider):
                         if Wrong1 in re.split(" ", contestants[k]):
                             Wrong1 = contestants[k]
                 except:
-                    Wrong1 = "N/A"
+                    Wrong1 = "NA"
                 try:
-                    Wrong2 = BeautifulSoup(BSRounds[j][i].div.get('onmouseover')).find('td', {'class':'wrong'})[1].get_text()
+                    Wrong2 = BeautifulSoup(BSRounds[j][i].div.get('onmouseover')).find_all('td', {'class':'wrong'})[1].get_text()
                     for k in range(0, len(contestants)):
                         if Wrong2 in re.split(" ", contestants[k]):
                             Wrong2 = contestants[k]
                 except:
-                    Wrong2 = "N/A"
+                    Wrong2 = "NA"
                 try:
-                    Wrong3 = BeautifulSoup(BSRounds[j][i].div.get('onmouseover')).find('td', {'class':'wrong'})[2].get_text()
+                    Wrong3 = BeautifulSoup(BSRounds[j][i].div.get('onmouseover')).find_all('td', {'class':'wrong'})[2].get_text()
                     for k in range(0, len(contestants)):
                         if Wrong3 in re.split(" ", contestants[k]):
                             Wrong3 = contestants[k]
                 except:
-                    Wrong3 = "N/A"
+                    Wrong3 = "NA"
                 try:
-                    Wrong4 = BeautifulSoup(BSRounds[j][i].div.get('onmouseover')).find('td', {'class':'wrong'})[3].get_text()
+                    Wrong4 = BeautifulSoup(BSRounds[j][i].div.get('onmouseover')).find_all('td', {'class':'wrong'})[3].get_text()
                 except:
-                    Wrong4 = "N/A"
+                    Wrong4 = "NA"
 
                 #Assign data to Item
                 item = JeopardyItem()
