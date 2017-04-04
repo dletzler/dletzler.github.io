@@ -1,0 +1,10 @@
+name: nyt_book
+title: nyt_book
+account: dletzler
+server: shinyapps.io
+appId: 169224
+bundleId: 775509
+url: https://dletzler.shinyapps.io/nyt_book/
+when: 1491257374.51636
+asMultiple: FALSE
+asStatic: FALSE
